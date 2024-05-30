@@ -58,5 +58,24 @@ public class CardTrick {
         } else {
             System.out.println("Sorry, your card is not in the magic hand.");
         }
+
+        Card luckyCard = new Card();
+        luckyCard.setValue(2);
+        luckyCard.setSuit("Clubs");
+        
+        inHand = false;
+        for (Card card : magicHand) {
+            if (card.getValue() == luckyCard.getValue() && card.getSuit().equals(luckyCard.getSuit())) {
+                inHand = true;
+                break;
+            }
+        }
+        
+        if (inHand) {
+            System.out.println("The lucky card is in the magic hand!");
+        } else {
+            System.out.println("The lucky card is not in the magic hand.");
+        }
+    }
     }
 }
